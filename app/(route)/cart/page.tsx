@@ -7,13 +7,14 @@ import {
 } from "@/app/actions/cart";
 import { CartItem } from "@/types/cart";
 import { getModifyCart } from "@/service/cart";
+import CheckoutButton from "./component/CheckoutButton";
 
 export default async function CartPage() {
   const cart: CartItem[] = await getCartAction();
   const data = await getModifyCart(cart);
   const { productList, totalAmount } = data.result;
 
-  console.log("Modified Cart Data:", data.result.productList);
+  // console.log("Modified Cart Data:", data.result.productList);
   if (productList.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-[60vh]">
@@ -109,10 +110,7 @@ export default async function CartPage() {
           <span>Total Amount</span>
           <span>₹{totalAmount}</span>
         </div>
-
-        <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded mt-4">
-          PLACE ORDER
-        </button>
+        <CheckoutButton productList={productList} />
       </div>
     </div>
   );

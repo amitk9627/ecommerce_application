@@ -8,7 +8,7 @@ const page = async ({ params }: { params: Promise<{ id: number }> }) => {
   const { id } = await params;
   const response = await getProductById(Number(id));
   if (!response.status) {
-    console.log("Product Details:", response.result);
+    // console.log("Product Details:", response.result);
     return <>error</>;
   }
   return (

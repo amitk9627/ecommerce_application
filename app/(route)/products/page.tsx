@@ -12,7 +12,6 @@ const page = () => {
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error occurred</p>;
-  // console.log(data, "data");
   const { result } = data;
   return (
     <div className="grid grid-cols-5 gap-5 max-md:grid-cols-2">
