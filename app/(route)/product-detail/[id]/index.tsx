@@ -34,7 +34,7 @@ const ProductDetails = ({ product }: ProductProps) => {
         <img
           src={product.productImage}
           alt={product.productName}
-          className="w-[350px] h-auto object-contain border rounded-lg p-4"
+          className="w-87.5 h-auto object-contain border rounded-lg p-4"
         />
       </div>
 

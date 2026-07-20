@@ -1,15 +1,18 @@
 import type { NextConfig } from "next";
+const path = require("path");
 
 const nextConfig: NextConfig = {
+   turbopack: {
+    root:path.resolve(__dirname),
+  },
    images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'upload.wikimedia.org',
+        hostname: 'images.unsplash.com',
       },
     ],
   },
-  /* config options here */
 };
 
 export default nextConfig;

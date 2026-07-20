@@ -1,7 +1,7 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { CartItem } from "@/types/cart";
+import type { CartItem } from "@/types/cart";
 
 const CART_KEY = "cart";
 
